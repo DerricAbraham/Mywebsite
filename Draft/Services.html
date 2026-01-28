@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Services</title>
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+  <style>
+    :root {
+      --bg: #0f1724;
+      --muted: #94a3b8;
+      --accent: #60a5fa;
+    }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+      background: linear-gradient(180deg, #071028 0%, #081730 100%);
+      color: #e6eef8;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px 20px 20px;
+    }
+    header h1 {
+      font-size: clamp(24px, 4vw, 32px);
+      margin: 0;
+    }
+    p.lead {
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 60px 20px;
+    }
+
+    .owl-carousel .item {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .owl-carousel .item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 22px rgba(2,6,23,0.7);
+    }
+    .owl-carousel .item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .service-info {
+      padding: 16px;
+      text-align: center;
+    }
+    .service-info h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #fff;
+    }
+    .service-info p {
+      margin: 6px 0 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 30px 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Services</h1>
+    <p class="lead">Explore our wide range of professional services below.</p>
+  </header>
+
+  <main class="container">
+    <div class="owl-carousel owl-theme">
+      <div class="item">
+        <img src="images/service1.jpg" alt="Construction">
+        <div class="service-info">
+          <h3>Construction</h3>
+          <p>End-to-end civil and structural solutions for all project types.</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/service2.jpg" alt="Interior Design">
+        <div class="service-info">
+          <h3>Interior Design</h3>
+          <p>Creative design and decor for residential and commercial spaces.</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/service3.jpg" alt="Renovation">
+        <div class="service-info">
+          <h3>Renovation</h3>
+          <p>Comprehensive remodeling to transform and modernize spaces.</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/service4.jpg" alt="Landscape Works">
+        <div class="service-info">
+          <h3>Landscape Works</h3>
+          <p>Beautiful outdoor layouts with greenery and hardscape integration.</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/service5.jpg" alt="Project Management">
+        <div class="service-info">
+          <h3>Project Management</h3>
+          <p>Expert planning, execution, and supervision for timely delivery.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Replace <code>images/serviceX.jpg</code> with your actual service photos.
+  </footer>
+
+  <!-- jQuery and Owl Carousel JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:20,
+        nav:true,
+        dots:true,
+        autoplay:true,
+        autoplayTimeout:3000,
+        responsive:{
+          0:{ items:1 },
+          600:{ items:2 },
+          1000:{ items:3 }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

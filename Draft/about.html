@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Our Company</title>
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #94a3b8;
+      --accent: #60a5fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+      background: linear-gradient(180deg, #071028 0%, #081730 100%);
+      color: #e6eef8;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px 20px;
+    }
+    header h1 {
+      font-size: clamp(24px, 4vw, 36px);
+      margin: 0;
+    }
+    p.lead {
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: 15px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .about-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+    .about-section img {
+      width: 100%;
+      max-width: 900px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 8px 22px rgba(2,6,23,0.6);
+    }
+    .about-section p {
+      max-width: 900px;
+      line-height: 1.6;
+      font-size: 16px;
+      color: #d9e2f1;
+    }
+
+    .team-highlights {
+      margin-top: 60px;
+      text-align: center;
+    }
+    .team-highlights h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+    .team-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 6px 16px rgba(2,6,23,0.5);
+      width: 100%;
+      max-width: 260px;
+    }
+    .team-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .team-card h3 {
+      margin: 8px 0 4px 0;
+      font-size: 16px;
+    }
+    .team-card p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 13px;
+    }
+
+    footer {
+      color: var(--muted);
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Our Company</h1>
+    <p class="lead">Learn about our journey, mission, and the team behind our success.</p>
+  </header>
+
+  <main class="container">
+    <section class="about-section">
+      <img src="images/about-banner.jpg" alt="Company Overview">
+      <p>
+        Established in 2013, <strong>Chinnu Engineering Works</strong> has been a trusted name in the construction and renovation industry. Our mission is to deliver exceptional quality, innovative solutions, and lasting partnerships. Over the years, we have successfully executed residential, commercial, and industrial projects across India with precision and professionalism.
+      </p>
+      <p>
+        We believe in combining advanced technology with skilled craftsmanship to achieve excellence in every project. Our commitment to sustainability, safety, and client satisfaction drives us forward as we continue to build a better tomorrow.
+      </p>
+    </section>
+
+    <section class="team-highlights">
+      <h2>Leadership Team</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="images/leader1.jpg" alt="Founder">
+          <h3>Mr. Shaji E M</h3>
+          <p>Founder & Managing Director</p>
+        </div>
+        <div class="team-card">
+          <img src="images/leader2.jpg" alt="Operations Head">
+          <h3>Mr. Manish P K</h3>
+          <p>Head of Operations</p>
+        </div>
+        <div class="team-card">
+          <img src="images/leader3.jpg" alt="Site in charge-Hyderabad">
+          <h3>Mr. Manu Madhav</h3>
+          <p>Site In charge-Hyderabad</p>
+        </div>
+        <div class="team-card">
+          <img src="images/leader3.jpg" alt="Site in charge-Mandideep">
+          <h3>Mr. Sajith M S</h3>
+          <p>Site In charge-Mandideep</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    
+    
+  </footer>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact & Management Team</title>
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #94a3b8;
+      --accent: #60a5fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+      background: linear-gradient(180deg, #071028 0%, #081730 100%);
+      color: #e6eef8;
+    }
+    header {
+      padding: 28px 24px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(22px, 3vw, 30px);
+    }
+    p.lead {
+      color: var(--muted);
+      margin-top: 6px;
+      font-size: 14px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .contact-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+    }
+    .contact-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .contact-details div {
+      background: rgba(255,255,255,0.03);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .contact-details h3 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+    }
+    .contact-details p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .team-section h2 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 24px;
+    }
+    .team-grid {
+      margin-top: 20px;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      justify-items: center;
+    }
+    .member-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.03);
+      width: 100%;
+      max-width: 260px;
+      box-shadow: 0 6px 16px rgba(2,6,23,0.5);
+    }
+    .member-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .member-card h3 {
+      margin: 8px 0 4px 0;
+      font-size: 16px;
+    }
+    .member-card p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 13px;
+    }
+
+    footer {
+      color: var(--muted);
+      text-align: center;
+      padding: 28px 12px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Contact Us & Management Team</h1>
+    <p class="lead">Reach out to us or meet our management professionals below.</p>
+  </header>
+
+  <main class="container">
+    <section class="contact-card">
+      <h2>Contact Details</h2>
+      <div class="contact-details">
+        <div>
+          <h3>Office Address</h3>
+          <p>Survey No 55, <br> 
+      Penjerla Road, <br>
+      Kothur Village and Mandal, <br>
+      Ranga Reddy dist. <br>
+      Telangana, Pin: 509228</p>
+        </div>
+        <div>
+          <h3>Email</h3>
+          <p>chinnuengineeringworks@gmail.com</p>
+        </div>
+        <div>
+          <h3>Phone</h3>
+          <p>+91 8179631418</p>
+        </div>
+        <div>
+          <h3>Office Hours</h3>
+          <p>Mon - Sat: 8:00 AM - 4:00 PM</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-section">
+      <h2>Management Team</h2>
+      <div class="team-grid">
+        <div class="member-card">
+          <img src="images/team1.jpg" alt="Managing Director">
+          <h3>Mr. E M Shaji</h3>
+          <p>Managing Director</p>
+        </div>
+        <div class="member-card">
+          <img src="images/team2.jpg" alt="Project Manager">
+          <h3>Mr. Manish P K</h3>
+          <p>Project Manager</p>
+        </div>
+        <div class="member-card">
+          <img src="images/team3.jpg" alt="Site In Charge">
+          <h3>Manu Madhav</h3>
+          <p>Site In-Charge</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Replace image paths (e.g., <code>images/team1.jpg</code>) with your team photos. Update details as needed.
+  </footer>
+</body>
+</html>

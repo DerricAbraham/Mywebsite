@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background: #f4f4f9;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .contact-container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: royalblue;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: navy;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contact Us</h1>
+  <div class="contact-container">
+  <form id="contactForm">
+  <label>Name</label>
+  <input type="text" id="name" required>
+
+  <label>Email</label>
+  <input type="email" id="email" required>
+
+  <label>Phone Number  </label>
+  <input type="tel" id="phone" pattern="[0-9]{10}" maxlength="10" placeholder="Enter 10 digit number" required 
+         oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+
+  <label>Message</label>
+  <textarea id="message" required></textarea>
+
+  <button type="submit" id="submitBtn">Send</button>
+</form>
+  </div>
+  <script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let btn = document.getElementById("submitBtn");
+  btn.disabled = true;
+  btn.textContent = "Submitting...";
+
+  fetch("https://script.google.com/macros/s/AKfycbz7qb2OeZ0JHzd8e-k0ptqIiiKh0NCAI7uTJ7da2XFeVkeHxA_-hGPdr784UvhttUVEZg/exec", {
+    method: "POST",
+    body: JSON.stringify({
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      message: document.getElementById("message").value
+    })
+  })
+  .then(res => {
+    alert("✅ Enquiry submitted successfully!");
+    document.getElementById("contactForm").reset(); // Clear fields
+    btn.disabled = false;
+    btn.textContent = "Send";
+  })
+  .catch(err => {
+    alert("❌ Error submitting form");
+    btn.disabled = false;
+    btn.textContent = "Send";
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project Photo Gallery</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#60a5fa}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#071028 0%,#081730 100%);color:#e6eef8}
+    header{padding:28px 24px;text-align:center}
+    h1{margin:0;font-size:clamp(20px,3vw,28px);letter-spacing:0.4px}
+    p.lead{color:var(--muted);margin-top:6px;font-size:14px}
+
+    .container{max-width:1200px;margin:28px auto;padding:0 18px}
+    .projects{display:grid;gap:20px}
+    @media(min-width:720px){.projects{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1100px){.projects{grid-template-columns:repeat(3,1fr)}}
+
+    .project-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .project-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .project-title h2{font-size:16px;margin:0}
+    .photo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    .photo-grid img{width:100%;height:140px;object-fit:cover;border-radius:8px;cursor:pointer;display:block;border:1px solid rgba(255,255,255,0.04)}
+    .project-meta{color:var(--muted);font-size:13px;margin-top:8px}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(3,6,12,0.75);z-index:60}
+    .lightbox.open{display:flex}
+    .lightbox-inner{max-width:1100px;width:100%;max-height:90vh;display:flex;align-items:center;gap:12px}
+    .lightbox-img{flex:1;max-height:90vh;display:flex;align-items:center;justify-content:center}
+    .lightbox-img img{max-width:100%;max-height:90vh;border-radius:10px;box-shadow:0 10px 30px rgba(2,6,23,0.7)}
+    .lightbox-controls{width:64px;display:flex;flex-direction:column;gap:8px;align-items:center}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px;border-radius:8px;color:var(--muted);cursor:pointer}
+    .btn:active{transform:translateY(1px)}
+    .close{position:absolute;right:18px;top:18px;background:rgba(0,0,0,0.35);border:0;color:#fff;padding:8px 10px;border-radius:8px;cursor:pointer}
+
+    footer{color:var(--muted);text-align:center;padding:28px 12px;font-size:13px}
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Projects — Project Photo Gallery</h1>
+    <p class="lead">.</p>
+  </header>
+
+  <main class="container">
+    <section class="projects" id="projects">
+
+      <!-- PROJECT 1 -->
+      <article class="project-card" data-project="Project 1">
+        <div class="project-title"><h2>CTWA PIPING WORK</h2><div class="muted">4 photos</div></div>
+        <div class="photo-grid">
+          <img src="F:\My Projects\Logos\CTWA\1.jpeg" alt="Project 1 - photo 1" data-src="F:\My Projects\Logos\CTWA\1.jpeg">
+          <img src="F:\My Projects\Logos\CTWA\2.jpeg" alt="Project 1 - photo 2" data-src="F:\My Projects\Logos\CTWA\2.jpeg">
+          <img src="F:\My Projects\Logos\CTWA\3.jpeg" alt="Project 1 - photo 3" data-src="F:\My Projects\Logos\CTWA\3.jpeg">
+          <img src="F:\My Projects\Logos\CTWA\4.jpeg" alt="Project 1 - photo 4" data-src="F:\My Projects\Logos\CTWA\4.jpeg">
+        </div>
+        <div class="project-meta">Client: Procter and Gamble - Hyderabad</div>
+      </article>
+
+      <!-- PROJECT 2 -->
+      <article class="project-card" data-project="Project 2">
+        <div class="project-title"><h2>THUNDERBOLT  </h2><div class="muted">4 photos</div></div>
+        <div class="photo-grid">
+          <img src="F:\My Projects\Logos\Thunderbolt\1.jpeg" alt="Project 2 - photo 1" data-src="F:\My Projects\Logos\Thunderbolt\1.jpeg">
+          <img src="F:\My Projects\Logos\Thunderbolt\2.jpeg" alt="Project 2 - photo 2" data-src="F:\My Projects\Logos\Thunderbolt\2.jpeg">
+          <img src="F:\My Projects\Logos\Thunderbolt\3.jpeg" alt="Project 2 - photo 3" data-src="F:\My Projects\Logos\Thunderbolt\3.jpeg">
+          <img src="F:\My Projects\Logos\Thunderbolt\5.jpeg" alt="Project 2 - photo 3" data-src="F:\My Projects\Logos\Thunderbolt\5.jpeg">
+          <div style="opacity:0;pointer-events:none"></div>
+        </div>
+        <div class="project-meta">Client: Procter and Gamble - Hyderabad</div>
+      </article>
+
+      <!-- PROJECT 3 -->
+      <article class="project-card" data-project="Project 3">
+        <div class="project-title"><h2>TANK FARM</h2><div class="muted">4 photos</div></div>
+        <div class="photo-grid">
+          <img src="F:\My Projects\Logos\Tank farm\1.jpeg" alt="Project 3 - photo 1" data-src="F:\My Projects\Logos\Tank farm\1.jpeg">
+          <img src="F:\My Projects\Logos\Tank farm\2.jpeg" alt="Project 3 - photo 2" data-src="F:\My Projects\Logos\Tank farm\2.jpeg">
+          <img src="F:\My Projects\Logos\Tank farm\3.jpeg" alt="Project 3 - photo 3" data-src="F:\My Projects\Logos\Tank farm\3.jpeg">
+          <img src="F:\My Projects\Logos\Tank farm\4.jpeg" alt="Project 3 - photo 4" data-src="F:\My Projects\Logos\Tank farm\4.jpeg">
+        </div>
+        <div class="project-meta">Client: Procter and Gamble - Hyderabad</div>
+      </article>
+
+      <!-- PROJECT 4 -->
+      <article class="project-card" data-project="Project 4">
+        <div class="project-title"><h2>Sheet on Sheet Project</h2><div class="muted">2 photos</div></div>
+        <div class="photo-grid">
+          <img src="images/project4-1.jpg" alt="Project 4 - photo 1" data-src="images/project4-1.jpg">
+          <img src="images/project4-2.jpg" alt="Project 4 - photo 2" data-src="images/project4-2.jpg">
+          <div style="opacity:0;pointer-events:none"></div>
+          <div style="opacity:0;pointer-events:none"></div>
+        </div>
+        <div class="project-meta">Client: Procter and Gamble - Mandideep</div>
+      </article>
+
+      <!-- PROJECT 5 -->
+      <article class="project-card" data-project="Project 5">
+        <div class="project-title"><h2>Fire NOC</h2><div class="muted">5 photos</div></div>
+        <div class="photo-grid">
+          <img src="images/project5-1.jpg" alt="Project 5 - photo 1" data-src="images/project5-1.jpg">
+          <img src="images/project5-2.jpg" alt="Project 5 - photo 2" data-src="images/project5-2.jpg">
+          <img src="images/project5-3.jpg" alt="Project 5 - photo 3" data-src="images/project5-3.jpg">
+          <img src="images/project5-4.jpg" alt="Project 5 - photo 4" data-src="images/project5-4.jpg">
+        </div>
+        <div class="project-meta">Client: Procter and Gamble - Hyderabad</div>
+      </article>
+
+      <!-- PROJECT 6 -->
+      <article class="project-card" data-project="Project 6">
+        <div class="project-title"><h2>WTP</h2><div class="muted">3 photos</div></div>
+        <div class="photo-grid">
+          <img src="images/project6-1.jpg" alt="Project 6 - photo 1" data-src="images/project6-1.jpg">
+          <img src="images/project6-2.jpg" alt="Project 6 - photo 2" data-src="images/project6-2.jpg">
+          <img src="images/project6-3.jpg" alt="Project 6 - photo 3" data-src="images/project6-3.jpg">
+          <div style="opacity:0;pointer-events:none"></div>
+        </div>
+        <div class="project-meta">Client: Procter and Gamble - Hyderabad</div>
+      </article>
+
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="close" id="lbClose" aria-label="Close lightbox">✕</button>
+    <div class="lightbox-inner">
+      <div class="lightbox-img"><img id="lbImage" src="" alt="Enlarged project photo"></div>
+      <div class="lightbox-controls">
+        <button id="prevBtn" class="btn" aria-label="Previous">◀</button>
+        <button id="nextBtn" class="btn" aria-label="Next">▶</button>
+        <a id="downloadBtn" class="btn" download target="_blank">Download</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>Tip: replace the <code>images/...</code> paths with your own photos. Keep each project's photos inside a folder if you like.</footer>
+
+  <script>
+    // Lightbox logic — collects all images grouped by project card
+    const projects = Array.from(document.querySelectorAll('.project-card'));
+    const lightbox = document.getElementById('lightbox');
+    const lbImage = document.getElementById('lbImage');
+    const lbClose = document.getElementById('lbClose');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    let currentGroup = [];
+    let currentIndex = 0;
+
+    // attach click handlers
+    projects.forEach(card => {
+      const imgs = Array.from(card.querySelectorAll('img'))
+        .filter(i => i.getAttribute('data-src'))
+        .map(i => i.getAttribute('data-src'));
+      card.dataset.images = JSON.stringify(imgs);
+
+      card.querySelectorAll('img').forEach((img, idx) => {
+        img.addEventListener('click', (e) => {
+          const all = JSON.parse(card.dataset.images);
+          currentGroup = all;
+          currentIndex = all.indexOf(img.dataset.src);
+          openLightbox();
+        });
+      });
+    });
+
+    function openLightbox(){
+      if(!currentGroup.length) return;
+      lbImage.src = currentGroup[currentIndex];
+      downloadBtn.href = currentGroup[currentIndex];
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lbImage.src = '';
+    }
+    function showNext(delta){
+      currentIndex = (currentIndex + delta + currentGroup.length) % currentGroup.length;
+      lbImage.src = currentGroup[currentIndex];
+      downloadBtn.href = currentGroup[currentIndex];
+    }
+
+    prevBtn.addEventListener('click', () => showNext(-1));
+    nextBtn.addEventListener('click', () => showNext(1));
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e)=>{
+      if(lightbox.classList.contains('open')){
+        if(e.key === 'Escape') closeLightbox();
+        if(e.key === 'ArrowRight') showNext(1);
+        if(e.key === 'ArrowLeft') showNext(-1);
+      }
+    });
+  </script>
+</body>
+</html>
